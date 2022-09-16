@@ -6,16 +6,14 @@
     --border-color: #EEEEEE;
     --lighest-gray: #ECECEC;
     --light-gray: #F5F5F5;
+    --light-gray-2: #F5F4FA;
     --gray: #757575;
+    --gray-2: #AFB1B8;
     --dark-gray: #2F303A;
     --darkest-gray: #212121;
     --white: white;
-}
-
-
-.icon {
-    fill: black;
-    border: 1px solid black;
+    --overlay-gradient: rgba(47, 48, 58, 0.4);
+    --social-networks-bg: rgba(255, 255, 255, 0.1);
 }
 
 html,
@@ -72,6 +70,14 @@ img {
 
     &_order {
         text-align: center;
+    }
+
+    &_clients {
+        text-align: center;
+    }
+
+    &_footer {
+        display: flex;
     }
 }
 
@@ -171,11 +177,19 @@ img {
             .contacts__link {
                 color: var(--blue);
             }
+
+            .contacts__icon {
+                fill: var(--blue);
+            }
         }
 
         &:focus {
             .contacts__link {
                 color: var(--blue);
+            }
+
+            .contacts__icon {
+                fill: var(--blue);
             }
         }
     }
@@ -186,15 +200,30 @@ img {
         line-height: 1.14;
         letter-spacing: .02em;
         color: var(--gray);
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 10px;
+        fill: var(--gray);
     }
 }
 
 .order {
+    background: linear-gradient(to right,
+            var(--overlay-gradient),
+            var(--overlay-gradient)),
+        url('../images/Img_17.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: var(--dark-gray);
     padding: 200px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1600px;
 
     &__header {
         color: var(--white);
@@ -232,11 +261,6 @@ img {
     &__item {
         margin-left: 30px;
 
-        &:first-of-type {
-            margin-left: 0;
-            margin-right: -30px;
-        }
-
         &-header {
             font-weight: 700;
             line-height: 1.14;
@@ -249,6 +273,14 @@ img {
             letter-spacing: 0.03em;
             color: var(--gray);
         }
+    }
+
+    &__icon-container {
+        padding: 25px 0;
+        text-align: center;
+        background-color: var(--light-gray-2);
+        border-radius: 4px;
+        margin-bottom: 30px;
     }
 }
 
@@ -308,7 +340,105 @@ img {
             color: var(--gray);
             font-size: 16px;
             line-height: 1.18;
+            margin-bottom: 16px;
         }
+    }
+}
+
+.social-networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    &_footer {
+        .social-networks__link {
+            background-color: var(--social-networks-bg);
+        }
+
+        .social-networks__icon {
+            fill: var(--white);
+        }
+    }
+
+    &__links-item {
+
+        margin-right: 10px;
+
+    }
+
+    &__link {
+        padding: 12px;
+        display: flex;
+        border-radius: 100%;
+        text-decoration: none;
+
+
+
+
+        &:hover {
+            background-color: var(--blue);
+
+            .social-networks__icon {
+                fill: var(--white);
+            }
+        }
+
+        &:focus {
+            background-color: var(--blue);
+
+            .social-networks__icon {
+                fill: var(--white);
+            }
+        }
+    }
+
+    &__icon {
+        fill: var(--gray-2);
+    }
+}
+
+.clients {
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 30px;
+        }
+    }
+
+    &__link {
+        display: block;
+        border-radius: 4px;
+        border: 1px var(--gray-2) solid;
+        height: 92px;
+        width: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            border: 1px var(--blue) solid;
+
+            .clients__icon {
+                fill: var(--blue);
+            }
+        }
+
+        &:focus {
+            border: 1px var(--blue) solid;
+
+            .clients__icon {
+                fill: var(--blue);
+            }
+        }
+    }
+
+    &__icon {
+        fill: var(--gray-2);
     }
 }
 
@@ -316,6 +446,16 @@ img {
     background-color: var(--dark-gray);
     padding: 60px 0;
     text-align: left;
+
+    &__header {
+        color: var(--white);
+        font-weight: 700;
+        letter-spacing: .03em;
+        line-height: 1.14;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
 
     &__contacts {
         margin: 0;
@@ -335,6 +475,10 @@ img {
 
     .logo {
         margin-bottom: 20px;
+    }
+
+    &__info {
+        margin-right: 70px;
     }
 }
 
@@ -387,6 +531,10 @@ img {
             line-height: 1.8;
             color: var(--gray);
             margin: 0;
+        }
+
+        &:hover {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
         }
     }
 
